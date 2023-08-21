@@ -1,0 +1,333 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.header_section {
+    max-height: 100px !important;
+    display: flex;
+    align-items: center !important;
+}
+.header_section .navbar-brand img {
+    height: 100px;
+    max-width: 80%;
+}
+
+.page-header .nav-item.contact_btn {
+    background: #000;
+}
+
+.page-header .nav-item.contact_btn {
+    width: 150px !important;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: 40px !important;
+    transition-property: background-color;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in;
+	transition-delay: 0.3s;
+}
+
+.page-header .nav-item.contact_btn .nav-link {
+    color: #fff !important;
+}
+
+.page-header .nav-link {
+    font-weight: 500 !important;
+    color: #000 !important;
+}
+
+.page-header .nav-item {
+    margin: 0 15px;
+}
+
+.page-header .nav-item:last-child {
+    margin: 0;
+}
+
+/* ––––––––STICKY STYLES –––––––– */
+.page-header.is-sticky {
+  position: fixed;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.35s ease-out;
+}
+
+.page-header.is-sticky img {
+  max-width: 80%;
+}
+
+.page-header.is-sticky button {
+  font-size: 14px;
+  padding: 7px 10px;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* –––––––– End STICKY STYLES –––––––– */
+
+.get-in-touch {
+	max-width: 800px;
+	margin: 50px auto;
+	position: relative;
+
+}
+
+
+.contact-form .form-field {
+	position: relative;
+	margin: 32px 0;
+}
+
+.contact-form .input-text {
+	display: block;
+	width: 100%;
+	height: 36px;
+	border-width: 0 0 2px 0;
+	border-color: #5543ca;
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 400;
+}
+
+.contact-form .input-text:focus {
+	outline: none;
+}
+
+.contact-form .input-text:focus+.label,
+.contact-form .input-text.not-empty+.label {
+	-webkit-transform: translateY(-30px);
+	transform: translateY(-30px);
+}
+
+.contact-form .label {
+	position: absolute;
+	left: 20px;
+	bottom: 11px;
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 400;
+	color: #5543ca;
+	cursor: text;
+	transition: -webkit-transform .2s ease-in-out;
+	transition: transform .2s ease-in-out;
+	transition: transform .2s ease-in-out,
+		-webkit-transform .2s ease-in-out;
+}
+
+.contact-form .submit-btn {
+	display: inline-block;
+	background-color: #000;
+	background-image: linear-gradient(125deg, #a72879, #064497);
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 16px;
+	padding: 8px 16px;
+	border: none;
+	width: 200px;
+	cursor: pointer;
+}
+.row .col{
+	display: flex;
+	flex-direction: column;
+}
+.row .left{
+	flex-basis: 35%;
+	min-width: 320px;
+	margin-right: 60px;
+}
+.row .right{
+	flex-basis: 60%;
+}
+.left .contactTitle h2{
+	position: relative;
+	font-size: 28px;
+	color: #ddd;
+	display: inline-block;
+	margin-bottom: 25px;
+}
+
+.left .contactTitle p{
+	font-size: 17px;
+	color: #ccc;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	padding-bottom: 22px;
+}
+.left .contactInfo{
+	margin-bottom: 16px;
+}
+.contactInfo .iconGroup{
+	display: flex;
+	align-items: center;
+	margin: 25px 0px;
+}
+.iconGroup .icon{
+	width: 45px;
+	height: 45px;
+	
+	border-radius: 50%;
+	margin-right: 20px;
+	position: relative;
+}
+
+.iconGroup .icon i{
+	font-size: 20px;
+	color: #ddd;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.iconGroup .details span{
+	display: block;
+	color: #888;
+	font-size: 18px;
+}
+.iconGroup .details span:nth-child(1){
+	text-transform: uppercase;
+	color: #ccc;
+}
+.left .socialMedia{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 22px 0px 20px;
+}
+.socialMedia a{
+	width: 35px;
+	height: 35px;
+	text-decoration: none;
+	text-align: center;
+	margin-right: 15px;
+	border-radius: 5px;
+	
+	background-color: dodgerblue;
+	transition: 0.4s;
+}
+.socialMedia a i{
+	color: #ddd;
+	font-size: 18px;
+	line-height: 35px;
+	border: 1px solid transparent;
+	transition-delay: 0.4s;
+}
+
+
+/* Code for the right section (column) */
+
+.row .right .messageForm{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 30px;
+}
+.row .right .inputGroup{
+	margin: 18px 0px;
+	position: relative;
+}
+.messageForm .halfWidth{
+	flex-basis: 48%;
+}
+.messageForm .fullWidth{
+	flex-basis: 100%;
+}
+.messageForm input, .messageForm textarea {
+    width: 100%;
+    font-size: 18px;
+    padding: 15px 0 15px 20px;
+    background-color: rgb(72,99,222);
+    color: #ddd;
+    border: none;
+    outline: none;
+    border-radius: 50px !important;
+}
+.messageForm textarea{
+	resize: none;
+	height: 220px;
+	display: block;
+}
+
+.messageForm .halfWidth ::placeholder, .messageForm .fullWidth ::placeholder {
+    color: #fff !important;
+}
+
+.inputGroup.fullWidth textarea {
+    border-radius: 9px !important;
+}
+.messageForm input:focus, .messageForm textarea:focus, .inputGroup button:not([type = "submit"]):focus {
+    border: 1px solid rgba(255,255,255,0.6) !important;
+}
+.copy_right span {
+    color: #fff;
+    text-transform: capitalize;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.copy_right {
+    text-align: center;
+    border-top: 1px solid #a19999;
+}
+
+textarea::-webkit-scrollbar{
+	width: 5px;
+}
+textarea::-webkit-scrollbar-track{
+	background-color: rgb(72,99,222);
+	border-radius: 15px;
+}
+textarea::-webkit-scrollbar-thumb{
+	background-color: dodgerblue;
+	border-radius: 15px;
+}
+.inputGroup label{
+	position: absolute;
+	left: 0;
+	bottom: 4px;
+	color: #888;
+	font-size: 18px;
+	transition: 0.4s;
+	pointer-events: none;
+}
+.inputGroup:nth-child(4) label{
+	top: 2px;
+}
+
+.inputGroup button{
+	padding: 8px 16px;
+	font-size: 18px;
+	background-color: white;
+	color: black;
+	border: 1px solid transparent;
+	border-radius: 25px;
+	outline: none;
+	cursor: pointer;
+	
+	transition: 0.4s;
+}
+
+@media(max-width: 1100px){
+	.messageForm .halfWidth{
+		flex-basis: 100%;
+	}
+}
+@media(max-width: 900px){
+	.container .row{
+		flex-wrap: wrap;
+	}
+	.row section.left, .row section.right{
+		flex-basis: 100%;
+		margin: 0px;
+	}
+}
