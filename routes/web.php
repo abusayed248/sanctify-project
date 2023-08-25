@@ -18,4 +18,7 @@ Auth::routes(['login' => false, 'register' => false]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
+Route::post('/message/store', [App\Http\Controllers\HomeController::class, 'store'])->name('client.message.store');
+
+
 

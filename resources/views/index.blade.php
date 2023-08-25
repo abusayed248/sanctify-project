@@ -36,9 +36,7 @@
                     <h2>SANCTIFYSOFT Limited provides end-to-end business solutions that leverage technical
                         consulting, systems design, development, integration, product engineering, maintenance, and
                         implementation services.</h2>
-                    <p class="mb-5 mt-5" style="color:rgb(149,149,162) ;">As a leading provider of technology services in Bangladesh and abroad, our
-                        mission, first and
-                        foremost, is to provide outstanding customer experience.</p>
+                    <p class="mb-5 mt-5 text-light" style="color:rgb(149,149,162) ;">Our primary goal as a top-tier supplier of technological services in Bangladesh and overseas is to deliver exceptional customer service.</p>
                     <button type="button" class="btn btn-light rounded-pill">GET IN TEUCH</button>
                 </div>
             </div>
@@ -67,7 +65,7 @@
                         <h5 class="text-light">
                             Development Outsourcing
                         </h5>
-                        <ul style="color: rgb(89,144,169);">
+                        <ul class="service_list" style="color: rgb(89,144,169);">
                             <li>Mobile Applications (iOS, Android)</li>
                             <li>Custom Web Applications</li>
                             <li> Reporting & Analytics </li>
@@ -82,7 +80,7 @@
                         <h5 class="text-light">
                             Consulting Services
                         </h5>
-                        <ul style="color: rgb(89,144,169);">
+                        <ul class="service_list" style="color: rgb(89,144,169);">
                             <li>Product Development </li>
                             <li>Enterprise Resource Planning (ERP)</li>
                             <li>IT Strategy & Architecture </li>
@@ -96,7 +94,7 @@
                         <h5 class="text-light">
                             Implementation & Support
                         </h5>
-                        <ul style="color: rgb(89,144,169);">
+                        <ul class="service_list" style="color: rgb(89,144,169);">
                             <li>Development Support</li>
                             <li>ERP Implementation</li>
                             <li>System Integration</li>
@@ -113,11 +111,8 @@
                 <div class="col-md-6 mb-5 pb-5">
                     <p>PASSIONATE AND COMMITTED</p>
                     <h1 class="mb-3">Why Choose Us ?</h1>
-                    <p style="color: rgb(149,149,162);">Sanctifysoft Limited provides end-to-end business solutions that leverage technical
-                        consulting, systems design, development, integration, product engineering, maintenance, and
-                        implementation services.</p>
-                    <p style="color: rgb(149,149,162);">As a leading provider of technology services in Bangladesh and abroad, our mission, first and
-                        foremost, is to provide outstanding customer experience.</p>
+                    <p class="unique_text_color" style="color: rgb(149,149,162);">Sanctifysoft Limited offers comprehensive business solutions that make use of services for product engineering, systems design, development, integration, and maintenance, as well as technical consultation.</p>
+                    <p class="unique_text_color" style="color: rgb(149,149,162);">Our primary goal as a top-tier supplier of technological services in Bangladesh and overseas is to deliver exceptional customer service.</p>
                 </div>
 
                 <div class="col-md-6"></div>
@@ -128,24 +123,21 @@
                         <br> <br>
                         <h5>01</h5>
                         <h5>Scalable Solutions</h5>
-                        <p style="color: rgb(149,149,162);">Custom solutions are built with Enterprise-scale in mind – from initial
-                            discovery to implementation.</p>
+                        <p class="unique_text_color" style="color: rgb(149,149,162);">From early discovery to implementation, custom solutions are developed with enterprise-scale in mind.</p>
                     </div>
                     <div class="col-md-4 wow shake" data-wow-iteration="1" data-wow-duration="1s">
                         <img src="{{ asset('frontend') }}/images/Screenshot__4_-removebg-preview.png" class="img-fluid" alt="..." style="    width: 37px;">
                         <br><br>
                         <h5>02</h5>
                         <h5>Global Presence</h5>
-                        <p style="color: rgb(149,149,162);" >Highly qualified consultants and engineers from across the Globe – working with you. </p>
+                        <p class="unique_text_color" style="color: rgb(149,149,162);" >Working with you are highly skilled consultants and engineers from around the world. </p>
                     </div>
                     <div class="col-md-4 wow bounce" data-wow-iteration="1" data-wow-duration="1s">
                         <img src="{{ asset('frontend') }}/images/Screenshot__5_-removebg-preview.png" class="img-fluid" alt="..." style="    width: 37px;">
                         <br><br>
                         <h5>03</h5>
                         <h5>Attention to detail</h5>
-                        <p style="color: rgb(149,149,162);">Quality-driven development process, including tool choice and testing and deployment
-                            automation.
-
+                        <p class="unique_text_color" style="color: rgb(149,149,162);">Process that prioritizes quality during development, including automated testing and deployment.
                         </p>
                     </div>
                 </div>

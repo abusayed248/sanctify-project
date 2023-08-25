@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\InfoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['login' => true, 'register' => false]);
 
-Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function() {
-    Route::get('home', [AdminController::class, 'adminHome'])->name('admin.dashboard');
+Route::group(['prefix' => 'admin', 'middleware' => 'is_admin', 'as' => 'admin.'], function() {
+    Route::get('home', [AdminController::class, 'adminHome'])->name('dashboard');
+    Route::post('site-info-update/{site_info}', [InfoController::class, 'update'])->name('site-info.update');
+    Route::get('edit-site-info', [InfoController::class, 'edit'])->name('site-info.edit');
+
+    //reply message
+    Route::get('reply-message/{contact}', [AdminController::class, 'replyMessage'])->name('reply.message');
+    Route::post('reply-message/{contact}', [AdminController::class, 'clientMessageReply'])->name('client.message.reply');
 });
 
 

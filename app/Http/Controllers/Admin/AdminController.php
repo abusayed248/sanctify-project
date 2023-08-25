@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Mail\ReplyMail;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -14,7 +18,8 @@ class AdminController extends Controller
     
     public function adminHome()
     {
-        return view('admin.dashboard');
+        $contacts = Contact::all();
+        return view('admin.dashboard', compact('contacts'));
     }
 
     /**
@@ -28,9 +33,9 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function replyMessage(Contact $contact)
     {
-        //
+        return view('admin.reply_message', compact('contact'));
     }
 
     /**
@@ -44,9 +49,21 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function clientMessageReply(Request $request, Contact $contact)
     {
-        //
+        $date = date('Y-m-d H:i:s');
+        $filter_date = Carbon::parse($date)->diffForHumans();
+        $mailData = [
+            'name' => 'Abu Sayed',
+            'reply_msg' => $request->reply_msg,
+            'time' => $filter_date
+        ];
+
+        $contact->status = 1;
+        $contact->save();
+         
+        Mail::to($request->client_email)->send(new ReplyMail($mailData));
+        return redirect()->route('admin.dashboard')->with('success', 'Your mail send sucessfully');    
     }
 
     /**

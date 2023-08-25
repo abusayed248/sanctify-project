@@ -9,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/animate.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/style.css">
 
@@ -68,7 +67,7 @@
                             </div>
                             <div class="details">
     
-                                <span>+880 17xxxxxxxx</span>
+                                <span>{{ $site_info->phn_number }}</span>
                             </div>
                         </div>
     
@@ -77,8 +76,7 @@
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div class="details">
-    
-                                <span>info.gmail.com</span>
+                                <a href="mailto:{{ $site_info->gmail }}"><span class="text-lowercase">{{ $site_info->gmail }}</span></a>
                             </div>
                         </div>
     
@@ -88,49 +86,93 @@
                             </div>
                             <div class="details">
     
-                                <span>GP GA 148, Wireless Gate Mohakhali, Dhaka 1212 Bangladesh</span>
+                                <span>{{ $site_info->location }}</span>
                             </div>
-    
                         </div>
-                        <div class="iconGroup">
-                            <div class="icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div class="details">
-    
-                                <span>101-16 67th Drive 2 FL, Forest Hills, NY 11375, USA</span>
-                            </div>
-    
-                        </div>
+                            
     
                     </div>
-                    <div class="socialMedia">
+
+                    {{-- <div class="socialMedia">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
+                    </div> --}}
+
                 </section>
                 <section class="col right mt-5">
-                    <form class="messageForm mt-5">
+                    @if(Session::has('error'))
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="alert alert-danger mt-4" role="alert">
+                              {{ Session::get('error') }}
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if(Session::has('success'))
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="alert alert-success mt-4" role="alert">
+                              {{ Session::get('success') }}
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    
+                    <form class="messageForm mt-5" action="{{ route('client.message.store') }}" method="post">
+                        @csrf
     
                         <div class="inputGroup halfWidth">
-                            <input type="text" name="" required="required" placeholder="Name" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196);">
+                            <input type="text" name="client_name" required="required" placeholder="Name" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196);">
+
+                            @error('client_name')
+                                <strong class="text-danger">
+                                    <strong>{{ $message }}</strong>
+                                </strong>
+                            @enderror
                         </div>
     
                         <div class="inputGroup halfWidth">
-                            <input type="text" name="" required="required" placeholder="Company" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
+                            <input type="text" name="company" required="required" placeholder="Company" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
+
+                            @error('company')
+                                <strong class="text-danger">
+                                    <strong>{{ $message }}</strong>
+                                </strong>
+                            @enderror
                         </div>
     
                         <div class="inputGroup halfWidth">
-                            <input type="text" name="" required="required" placeholder="Phone" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
+                            <input type="text" name="client_phn_number" required="required" placeholder="Phone" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
+
+                            @error('client_phn_number')
+                                <strong class="text-danger">
+                                    <strong>{{ $message }}</strong>
+                                </strong>
+                            @enderror
                         </div>
     
                         <div class="inputGroup halfWidth">
-                            <input type="email" name="" placeholder="Email" required="required" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
+                            <input type="email" name="client_email" placeholder="Email" required="required" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
+
+                            @error('client_email')
+                                <strong class="text-danger">
+                                    <strong>{{ $message }}</strong>
+                                </strong>
+                            @enderror
                         </div>
     
                         <div class="inputGroup fullWidth">
-                            <textarea placeholder="Message" required="required" style="margin-left: -15px;  border-radius: 5px;"></textarea>
+                            <textarea placeholder="Message" name="client_message" required="required" style="margin-left: -15px;  border-radius: 5px;"></textarea>
+
+
+                            @error('client_message')
+                                <strong class="text-danger">
+                                    <strong>{{ $message }}</strong>
+                                </strong>
+                            @enderror
                         </div>
     
                         <div class="inputGroup fullWidth">
@@ -149,7 +191,6 @@
     <script src="{{ asset('frontend') }}/js/main.js"></script>
     <!-- Add Bootstrap JS scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"></script>
     <script src="{{ asset('frontend') }}/js/wow.js"></script>
 
