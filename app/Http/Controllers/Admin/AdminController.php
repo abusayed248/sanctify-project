@@ -18,8 +18,7 @@ class AdminController extends Controller
     
     public function adminHome()
     {
-        $contacts = Contact::all();
-        return view('admin.dashboard', compact('contacts'));
+        return view('admin.dashboard');
     }
 
     /**
@@ -33,44 +32,10 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function replyMessage(Contact $contact)
-    {
-        return view('admin.reply_message', compact('contact'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit(Contact $contact)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function clientMessageReply(Request $request, Contact $contact)
-    {
-        $date = date('Y-m-d H:i:s');
-        $filter_date = Carbon::parse($date)->diffForHumans();
-        $mailData = [
-            'name' => 'Abu Sayed',
-            'reply_msg' => $request->reply_msg,
-            'time' => $filter_date
-        ];
-
-        $contact->status = 1;
-        $contact->save();
-         
-        Mail::to($request->client_email)->send(new ReplyMail($mailData));
-        return redirect()->route('admin.dashboard')->with('success', 'Your mail send sucessfully');    
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    
 }

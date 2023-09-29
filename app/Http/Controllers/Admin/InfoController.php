@@ -41,6 +41,7 @@ class InfoController extends Controller
 
         \DB::beginTransaction();
         $site_info->update($request->all());
+        notify()->success('Info updated successfully', '');
         \DB::commit();
         return redirect()->back()->with('success', 'Info updated successfully');
         try {

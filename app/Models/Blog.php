@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Blog extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
-        'client_name','company','client_phn_number','client_email','client_message',
+        'title', 'backend_tech', 'frontend_tech','description','thumbnail','status',
     ];
 
 
     protected $casts = [
         'status' => 'boolean',
     ];
-
 }

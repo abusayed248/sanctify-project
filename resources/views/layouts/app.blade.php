@@ -6,15 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanctify Soft</title>
     <!-- Add Bootstrap CSS link -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('frontend') }}/images/tecnology/Stack Logo/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/animate.css">
+
+    {{-- whatsapp chatbox --}}
+    <link rel="stylesheet" href="{{ asset('frontend') }}/whatsapp-chat/venom-button.min.css" />
+
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/style.css">
+    <link rel="stylesheet" href="{{ asset('frontend') }}/css/technology.css">
+    <link rel="stylesheet" href="{{ asset('frontend') }}/css/responsive.css">
+
 
 </head>
 
 <body>
+    <div id="myButton"></div>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg header_section  fixed-top page-header">
         <div class="container">
@@ -35,7 +44,7 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Blog</a>
+                        <a class="nav-link" href="#blogs">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact Us</a>
@@ -49,10 +58,10 @@
     @yield('content')
 
     <!-- Contact Us Section -->
-    <section class="p-5 wow pulse" data-wow-iteration="1" data-wow-duration="1s" id="contact" style="background-color: rgb(82, 79, 103);">
+    <section class="contact_us p-5 wow pulse" data-wow-iteration="1" data-wow-duration="1s" id="contact" style="background-color: rgb(82, 79, 103);">
         <div class="container"  >
             <main class="row">
-                <section class="col left p-5">
+                <section class="col mob_res_get_in_touch_text left p-5">
     
                     <div class="contactTitle">
                         <h2>Get In Touch</h2>
@@ -86,10 +95,21 @@
                             </div>
                             <div class="details">
     
-                                <span>{{ $site_info->location }}</span>
+                                <span class="text-capitalize">{{ $site_info->location }}</span>
                             </div>
                         </div>
-                            
+    
+                        <div class="iconGroup">
+                            <div class="icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="details">
+    
+                                <span class="text-capitalize">355 E 143rd Street Bronx, NY 10454</span>
+                            </div>
+                        </div>
+
+
     
                     </div>
 
@@ -111,72 +131,31 @@
                     </div>
                     @endif
 
-                    @if(Session::has('success'))
                     <div class="row">
                         <div class="col-xl-12">
-                            <div class="alert alert-success mt-4" role="alert">
-                              {{ Session::get('success') }}
+                            <div id="messageStatus" class="alert alert-success mt-4 d-none" role="alert">
+                              
                             </div>
                         </div>
                     </div>
-                    @endif
                     
-                    <form class="messageForm mt-5" action="{{ route('client.message.store') }}" method="post">
+                    <form class="messageForm" action="{{ route('client.message.store') }}" method="post">
                         @csrf
     
                         <div class="inputGroup halfWidth">
-                            <input type="text" name="client_name" required="required" placeholder="Name" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196);">
-
-                            @error('client_name')
-                                <strong class="text-danger">
-                                    <strong>{{ $message }}</strong>
-                                </strong>
-                            @enderror
+                            <input type="text" name="client_name" id="client_name" required="required" placeholder="Name" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196);">
                         </div>
     
                         <div class="inputGroup halfWidth">
-                            <input type="text" name="company" required="required" placeholder="Company" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
-
-                            @error('company')
-                                <strong class="text-danger">
-                                    <strong>{{ $message }}</strong>
-                                </strong>
-                            @enderror
-                        </div>
-    
-                        <div class="inputGroup halfWidth">
-                            <input type="text" name="client_phn_number" required="required" placeholder="Phone" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
-
-                            @error('client_phn_number')
-                                <strong class="text-danger">
-                                    <strong>{{ $message }}</strong>
-                                </strong>
-                            @enderror
-                        </div>
-    
-                        <div class="inputGroup halfWidth">
-                            <input type="email" name="client_email" placeholder="Email" required="required" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
-
-                            @error('client_email')
-                                <strong class="text-danger">
-                                    <strong>{{ $message }}</strong>
-                                </strong>
-                            @enderror
+                            <input type="email" name="client_email" id="client_email" placeholder="Email" required="required" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
                         </div>
     
                         <div class="inputGroup fullWidth">
-                            <textarea placeholder="Message" name="client_message" required="required" style="margin-left: -15px;  border-radius: 5px;"></textarea>
-
-
-                            @error('client_message')
-                                <strong class="text-danger">
-                                    <strong>{{ $message }}</strong>
-                                </strong>
-                            @enderror
+                            <textarea placeholder="Message" name="client_message" id="client_message" required="required" style="margin-left: -15px;  border-radius: 5px;"></textarea>
                         </div>
     
                         <div class="inputGroup fullWidth">
-                            <button>Submit</button>
+                            <button class="mob_res_submit_btn" type="submit" id="contactBtn">Submit</button>
                         </div>
                     </form>
                 </section>
@@ -195,6 +174,21 @@
     <script src="{{ asset('frontend') }}/js/wow.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+
+    {{-- whatsapp chatbox --}}
+    <script src="{{ asset('frontend') }}/whatsapp-chat/venom-button.min.js"></script>
+
+    <script>
+       $('#myButton').venomButton({
+          phone: '+8801782037090',
+          chatMessage: 'Sanctifysoft Chat',
+          message: "Type your message here...",
+          nameClient: "jQuery Script",
+          position:"right",
+          showPopup: true
+        });
+    </script>   
+
     <script>  
         new WOW().init();
 
@@ -202,7 +196,31 @@
             $('#top li').removeClass('contact_btn');
             $(this).addClass("contact_btn");
         });  
-    </script>   
+    </script>
+
+    <script>
+        $('.messageForm').on('submit', function (e) {
+            e.preventDefault()
+            let url = $(this).attr('action');
+            let req = $(this).serialize();
+            $("#contactBtn").html('Please wait..');
+            $("#contactBtn").attr('disabled', true);
+            
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: req,
+                success: function (data) {
+                    console.log(data);
+                    $("#contactBtn").html('Submit');
+                    $("#contactBtn").attr('disabled', false);
+                    $('#messageStatus').html(data.message)
+                    $('#messageStatus').removeClass('d-none')
+                    $('.messageForm').trigger("reset");
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

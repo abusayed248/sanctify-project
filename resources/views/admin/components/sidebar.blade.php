@@ -12,6 +12,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Website Info
                 </a>
+                <a class="nav-link " href="{{ route('admin.blog.index') }}" >
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Blog
+                </a>
                 
             </div>
         </div>

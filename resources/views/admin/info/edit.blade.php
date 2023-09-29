@@ -69,7 +69,7 @@
                                 @enderror
                               </div>
                               
-                              <button type="submit" class="btn btn-primary">Submit</button>
+                              <button type="submit" class="btn btn-success px-4 py-2 rounded-pill">Update</button>
                             </form>
                         </div>
                     </div>

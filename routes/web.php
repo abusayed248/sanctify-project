@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+    Artisan::call('optimize:clear');
+});
 
 Auth::routes(['login' => false, 'register' => false]);
 

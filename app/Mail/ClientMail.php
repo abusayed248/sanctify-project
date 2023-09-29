@@ -9,18 +9,19 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ReplyMail extends Mailable
+class ClientMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $mailData;
+    public $details;
+
 
     /**
      * Create a new message instance.
      */
-    public function __construct($mailData)
+    public function __construct($details)
     {
-        $this->mailData = $mailData;
+        $this->details = $details;
     }
 
     /**
@@ -29,7 +30,7 @@ class ReplyMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Sanctify Soft Replying your message',
+            subject: $this->details['client_email'],
         );
     }
 
@@ -39,7 +40,7 @@ class ReplyMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.reply_mail',
+            view: 'emails.clientMail',
         );
     }
 

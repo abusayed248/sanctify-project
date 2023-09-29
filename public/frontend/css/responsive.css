@@ -1,0 +1,208 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 425px) {
+  .header_section #navbarNav {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 15px 0;
+  }
+
+  .page-header .nav-item:last-child {
+      margin: 0 15px;
+  }
+
+  .navbar-brand {
+      margin-top: -12px;
+  }
+
+  .page-header .nav-item.contact_btn {
+      margin-left: 15px !important;
+      background-color: inherit;
+      text-align: left;
+      width: auto !important;
+  }
+
+  .page-header .nav-item.contact_btn .nav-link {
+      color: #000 !important;
+      display: inline-block;
+      border-bottom: 4px solid #ff7676;
+  }
+
+  .page-header .nav-link {
+      line-height: 10px;
+  }
+
+  .page-header .nav-item {
+      margin-bottom: 10px;
+  }
+
+  .home_banner .container {
+      width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin: 0 !important;
+      padding-bottom: 10px !important;
+  }
+
+  .banner_mobile {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+
+  .banner_mobile h1, .services_content h1 {
+      font-size: 28px;
+      line-height: 40px;
+      margin-top: 30px !important;
+      margin-bottom: 15px !important;
+  }
+
+  .banner_mobile img {
+      width: 100% !important;
+  }
+
+  .about_us {
+      text-align: center;
+  }
+  
+  .about_us .container {
+      margin: 0 !important;
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+  }
+
+  .mobile_responsive_column {
+      padding: 0 !important;
+      text-align: center;
+  }
+
+  .about-text-btn h2 {
+      font-size: 16px;
+      line-height: 28px;
+      margin-bottom: 0 !important;
+  }
+
+  .about-text-btn p {
+      margin-top: 25px !important;
+      margin-bottom: 25px !important;
+      font-size: 16px;
+  }
+
+  .about-text-btn {
+      margin-top: 60px !important;
+  }
+
+  #services {
+    padding: 0 !important;
+  }
+
+  .services_content {
+      padding: 15px !important;
+      text-align: center;
+      box-shadow: 1px -2px 14px 0px #ccc;
+  }
+
+  .services_content img {
+      width: auto !important;
+  }
+
+  .services_moblie_version_text {
+      padding: 0 !important;
+  }
+
+  .services_content h1 {
+      margin-bottom: 50px !important;
+  }
+
+  #services .p-5 {
+      padding: 40px 0 0 0 !important;
+  }
+
+  .development_services .service_list {
+      padding: 0;
+  }
+
+  .mobile_res_col {
+      text-align: center;
+  }
+
+  .mobile_res_col img {
+      margin: auto;
+  }
+
+  .pad-tb {
+      padding: 30px 0 40px 0;
+  }
+
+  #home {
+      padding: 15px !important;
+      padding-top: 30px !important;
+  }
+
+  .mobile_res_pd {
+      padding: 0 !important;
+  }
+
+  .about-section h1 {
+      font-size: 30px;
+  }
+
+  .unique_text_color {
+      font-size: 15px !important;
+  }
+
+  .about-section {
+      padding: 0 !important;
+  }
+
+  .mobile_res_center {
+      text-align: center;
+      margin: auto;
+  }
+
+  .mobile_res_card {
+      box-shadow: 0 0 7px #afafafa3;
+      padding: 10px;
+      margin-bottom: 15px;
+  }
+
+  .contact_us {
+      padding: 35px 0 !important;
+  }
+
+  .mob_res_get_in_touch_text {
+      padding: 0 !important;
+  }
+
+  .messageForm .inputGroup input, .messageForm .inputGroup textarea {margin: 0 !important;}
+
+  .messageForm .inputGroup, .messageForm .inputGroup {
+      margin-bottom: 10px !important;
+  }
+
+  .contactTitle {
+      padding-left: 15px;
+  }
+
+  .contactTitle p {
+      margin-bottom: 0;
+      line-height: 28px !important;
+  }
+
+  .contactInfo .iconGroup {
+      margin: 10px 0;
+  }
+
+  .contact_us .col.right.mt-5 {
+      margin: 0 !important;
+  }
+
+  .mob_res_submit_btn {
+      width: 100% !important;
+  }
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .example {background: green;}
+}

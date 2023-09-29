@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\InfoController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin', 'as' => 'admin.']
     //reply message
     Route::get('reply-message/{contact}', [AdminController::class, 'replyMessage'])->name('reply.message');
     Route::post('reply-message/{contact}', [AdminController::class, 'clientMessageReply'])->name('client.message.reply');
+
+    //blog route
+    Route::resource('blog', BlogController::class);
 });
 
 

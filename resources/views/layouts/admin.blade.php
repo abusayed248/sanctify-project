@@ -9,7 +9,11 @@
         <title>@yield('title')</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="{{ asset('backend') }}/css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+        <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
+
+        @notifyCss
+
     </head>
 
     <body class="sb-nav-fixed">
@@ -45,12 +49,18 @@
             @yield('admin_content')
 
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
         <script src="{{ asset('backend') }}/js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" ></script>
         <script src="{{ asset('backend') }}/assets/demo/chart-area-demo.js"></script>
         <script src="{{ asset('backend') }}/assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"></script>
         <script src="{{ asset('backend') }}/js/datatables-simple-demo.js"></script>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"></script>
+
+        @stack('script')
+
+        @include('notify::components.notify')
+        @notifyJs
     </body>
 </html>
