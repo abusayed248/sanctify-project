@@ -4,7 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanctify Soft</title>
+    <!-- Google meta tag -->
+    <meta name="description" content="@yield('description')">
+    <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@yield('title')</title>
+
+    <!-- Facebook grap meta tag -->
+    <meta property="og:title" content="@yield('title')" />
+    <meta property="og:description" content="@yield('description')" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="@yield('site_url')" />
+    <meta property="og:image" content="@yield('thumbnail')" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="twitter:card" content="@yield('thumbnail')">
+
+
+
+
     <!-- Add Bootstrap CSS link -->
     <link rel="icon" type="image/x-icon" href="{{ asset('frontend') }}/images/tecnology/Stack Logo/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-
+@section('title', 'Sanctify Soft')
 
 @section('content')
 
@@ -245,23 +245,23 @@
           <div class="col-lg-4 col-sm-6 single-card-item wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
             <div class="isotope_item hover-scale">
               <div class="item-image min_img_size">
-                <a href="javascript::void()">
+                <a href="{{ route('blog.details', $blog->id) }}">
                   <img src="{{ asset($blog->thumbnail) }}" alt="blog" class="img-fluid">
                 </a>
                 <span class="category-blog">
-                  <a href="#">{{ $blog->backend_tech }}</a>
-                  <a href="#">{{ $blog->frontend_tech }}</a>
+                  <a href="javascript::void()">{{ $blog->backend_tech }}</a>
+                  <a href="javascript::void()">{{ $blog->frontend_tech }}</a>
                 </span>
               </div>
               <div class="item-info blog-info">
                 <div class="entry-blog">
                   <span class="posted-on">
-                    <a href="#">
+                    <a href="javascript::void()">
                       <i class="fas fa-clock"></i> {{ date('F d, Y', strtotime($blog->created_at)) }} </a>
                   </span>
                 </div>
                 <h4>
-                  <a href="javascript::void()">{{ $blog->title }}</a>
+                  <a href="{{ route('blog.details', $blog->id) }}">{{ $blog->title }}</a>
                 </h4>
                 <p>{{ $blog->description }}</p>
               </div>

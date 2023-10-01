@@ -44,4 +44,11 @@ class HomeController extends Controller
             return response()->json(['status' => false, 'error' => $e->getMessage()]);
         }
     }
+
+    public function blogDetails(Blog $blog)
+    {
+        $site_info = SiteInfo::first();
+        $blog->where('status', '=', 1)->firstOrFail();
+        return view('blog_details', compact('blog', 'site_info'));
+    }
 }

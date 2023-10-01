@@ -25,4 +25,5 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('in
 Route::post('/message/store', [App\Http\Controllers\HomeController::class, 'store'])->name('client.message.store');
 
 
-
+// blog details route
+Route::get('/blog/details/{blog}', [App\Http\Controllers\HomeController::class, 'blogDetails'])->name('blog.details');
