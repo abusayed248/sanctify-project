@@ -166,19 +166,19 @@
                         </div>
                     </div>
                     
-                    <form class="messageForm" action="{{ route('client.message.store') }}" method="post">
+                    <form class="messageForm" action="https://formsubmit.co/fe18c8fc223c0b9f24c6cc94935b8500" method="POST">
                         @csrf
     
                         <div class="inputGroup halfWidth">
-                            <input type="text" name="client_name" id="client_name" required="required" placeholder="Name" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196);">
+                            <input type="text" name="name" id="client_name" required="required" placeholder="Name" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196);">
                         </div>
     
                         <div class="inputGroup halfWidth">
-                            <input type="email" name="client_email" id="client_email" placeholder="Email" required="required" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
+                            <input type="email" name="email" id="client_email" placeholder="Email" required="required" style="margin-left: -15px; border-radius: 25px; border-color:rgb(52,69,196)">
                         </div>
     
                         <div class="inputGroup fullWidth">
-                            <textarea placeholder="Message" name="client_message" id="client_message" required="required" style="margin-left: -15px;  border-radius: 5px;"></textarea>
+                            <textarea placeholder="Message" name="message" id="client_message" required="required" style="margin-left: -15px;  border-radius: 5px;"></textarea>
                         </div>
     
                         <div class="inputGroup fullWidth">
@@ -225,29 +225,7 @@
         });  
     </script>
 
-    <script>
-        $('.messageForm').on('submit', function (e) {
-            e.preventDefault()
-            let url = $(this).attr('action');
-            let req = $(this).serialize();
-            $("#contactBtn").html('Please wait..');
-            $("#contactBtn").attr('disabled', true);
-            
-            $.ajax({
-                url: url,
-                type: 'post',
-                data: req,
-                success: function (data) {
-                    console.log(data);
-                    $("#contactBtn").html('Submit');
-                    $("#contactBtn").attr('disabled', false);
-                    $('#messageStatus').html(data.message)
-                    $('#messageStatus').removeClass('d-none')
-                    $('.messageForm').trigger("reset");
-                }
-            });
-        });
-    </script>
+    
 </body>
 
 </html>

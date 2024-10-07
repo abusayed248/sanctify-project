@@ -35,9 +35,10 @@ class HomeController extends Controller
                 'client_message' => $request->client_message,
             ];
 
-            Mail::to('sanctifysoft@gmail.com')->send(new ClientMail($details));
+            Mail::to('contact@sanctifysoftlimited.xyz')->send(new ClientMail($details));
             DB::commit();
-            return response()->json(['status' => true, 'message' => 'Message sent successfully']);
+            notify()->success('Message sent successfully', '');
+            return redirect()->back();
         } catch (\Throwable $e) {
             report($e);
             \DB::rollback();
