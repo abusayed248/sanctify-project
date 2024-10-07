@@ -10,7 +10,7 @@
 
 @section('content')
 
-<section class="blog-home pad-tb">
+<section class="blog-details pad-tb">
     <div class="container">
       <div class="row">
 

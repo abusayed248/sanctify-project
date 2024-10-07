@@ -352,6 +352,10 @@ button[type="submit"][disabled] {
     background-color: rgb(75, 186, 182) !important;
 }
 
+.blog-details .card img {
+    height: 350px;
+}
+
 @media(max-width: 1100px){
 	.messageForm .halfWidth{
 		flex-basis: 100%;

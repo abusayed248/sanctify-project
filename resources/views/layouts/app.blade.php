@@ -44,7 +44,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg header_section  fixed-top page-header">
         <div class="container">
-            <a class="navbar-brand" href="#"> <img src="{{ asset('frontend') }}/images/sanctify-soft.svg" alt="" class="img-fluid" srcset=""></a>
+            <a class="navbar-brand" href="{{ url('/') }}"> <img src="{{ asset('frontend') }}/images/sanctify-soft.svg" alt="" class="img-fluid" srcset=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -197,7 +197,7 @@
 
     <script>
        $('#myButton').venomButton({
-          phone: '+8801782037090',
+          phone: '+8801639380804',
           chatMessage: 'Sanctifysoft Chat',
           message: "Type your message here...",
           nameClient: "jQuery Script",
