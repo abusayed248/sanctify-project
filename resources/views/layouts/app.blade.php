@@ -96,6 +96,16 @@
                                 <span>{{ $site_info->phn_number }}</span>
                             </div>
                         </div>
+
+                        <div class="iconGroup">
+                            <div class="icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="details">
+
+                                <span>+8801639380804</span>
+                            </div>
+                        </div>
     
                         <div class="iconGroup">
                             <div class="icon">
@@ -130,11 +140,11 @@
     
                     </div>
 
-                    {{-- <div class="socialMedia">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div> --}}
+                    <div class="socialMedia">
+                        <a target="_blank" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a target="_blank" href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/104460909/admin/notifications/all/"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
 
                 </section>
                 <section class="col right mt-5">
