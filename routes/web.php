@@ -22,7 +22,7 @@ Auth::routes(['login' => false, 'register' => false]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
-Route::post('/message/store', [App\Http\Controllers\HomeController::class, 'store'])->name('client.message.store');
+Route::post('/message-send', [App\Http\Controllers\HomeController::class, 'store'])->name('send.message.store');
 
 
 // blog details route

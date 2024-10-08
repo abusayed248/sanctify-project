@@ -30,19 +30,20 @@ class HomeController extends Controller
         DB::beginTransaction();
         try {
             $details = [
-                'client_name' => $request->client_name,
-                'client_email' => $request->client_email,
-                'client_message' => $request->client_message,
+                'client_name' => $request->name,
+                'client_email' => $request->email,
+                'client_message' => $request->message,
             ];
 
-            Mail::to('contact@sanctifysoftlimited.xyz')->send(new ClientMail($details));
+            Mail::to('abusayed.dev2023@gmail.com')->send(new ClientMail($details));
             DB::commit();
             notify()->success('Message sent successfully', '');
             return redirect()->back();
         } catch (\Throwable $e) {
             report($e);
             \DB::rollback();
-            return response()->json(['status' => false, 'error' => $e->getMessage()]);
+            notify()->error($e->getMessage(), '');
+            return redirect()->back();
         }
     }
 

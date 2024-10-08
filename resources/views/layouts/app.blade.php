@@ -166,7 +166,7 @@
                         </div>
                     </div>
                     
-                    <form class="messageForm" action="https://formsubmit.co/fe18c8fc223c0b9f24c6cc94935b8500" method="POST">
+                    <form class="messageForm" action="{{ route('send.message.store') }}" method="POST">
                         @csrf
     
                         <div class="inputGroup halfWidth">
@@ -208,8 +208,8 @@
     <script>
        $('#myButton').venomButton({
           phone: '+8801639380804',
-          chatMessage: 'Sanctifysoft Chat',
-          message: "Type your message here...",
+          chatMessage: 'Sanctify Soft Limited Chat',
+          message: "",
           nameClient: "jQuery Script",
           position:"right",
           showPopup: true
